@@ -1,0 +1,143 @@
+/*  Notes:
+
+Boiler Plate code.
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body{
+  width: 100%;
+  height: 100%;
+}
+
+# means id, . means class and name of tag means targetting particular tag in the html page.
+
+attributes:
+1) width and height: should be in %
+2) use x px for giving accurate/absolute value of the attribute.
+3) margin patterns:
+  1) margin: xpx gives margin in all diirection
+  2) margin-top, margin-right, margin-bottom, margin-left indivisual magin
+  3) margin: xpx ypx , 1 st value is applied to top-bottom and 2 nd value is applied to left and right side.
+4) Padding also follows the same pattern
+5) Image related:
+  1) for getting image from internet, backgroung-image: url(url)
+  2) for making the image fit to screen, background-size: cover
+  3) if the image is long than to decide which part to show, background-position: bottom/top/center
+
+6) absolute position: when there are 3 cars and we levitate one car so the other cars will move ahead , so when we make position absolute the div levitates.
+  position: absolute
+
+7) when the div is uplifted than it can move anywhere easily
+  /* left: x%;
+  right: x%;
+  top: x%;
+  bottom: x%; 
+
+8) when we want to move one element in terms of another element
+
+for eg there is a big square and inside it there is a small square and we have to move small grid inside the big square
+so there is a nested grid in html.
+and in this case we have to give position:relative in the parend div, so now the reference will not be the entire screen but the outer div 
+and position: absolute in the child div.so that it can levitate and move freely.
+
+#bada{
+  height: 500px;
+  width: 500px;
+  background-color: blue;
+  position: relative;
+}
+
+#chota{
+  height: 250px;
+  width: 250px;
+  background-color: red;
+  position: absolute; so that 
+  top: 20%; for movement
+  left: 100%;
+}
+
+9) Flex Box:
+
+when there is a parent div and under it there mulltiple child div and we want to align them in a horizontal line than we assign the parent as display: flex 
+
+for manipulatinng width wise: justify-content
+for manipulating height wise: align-items
+and both are to be put in the parent div
+
+values: start, end, center, space between, space around
+  
+  */
+
+
+  
+
+*/
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* #image{
+  width: 100%;
+  height: 100%;
+  background-image: url(https://imgs.search.brave.com/HbYTsaAKCv_h5DZx0GCDdL4FW-2XJglOL0rhBdzzXKg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDM3MDM0/MTcuanBn);
+  background-size: cover;
+  background-position:center;
+
+} */
+
+#main{
+  height: 800px;
+  width: 800px;
+  background-color:grey;
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#car1{
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  /* position: absolute; */
+  /* left: 20%;
+  right: 20%;
+  top: 20%;
+  bottom: 20%; */
+}
+
+#car2{
+    height: 200px;
+  width: 200px;
+  background-color:blue;
+}
+
+#car3{
+    height: 200px;
+  width: 200px;
+  background-color: green;
+}
+
+#bada{
+  height: 500px;
+  width: 500px;
+  background-color: blue;
+  position: relative;
+}
+
+#chota{
+  height: 250px;
+  width: 250px;
+  background-color: red;
+  position: absolute;
+  top: 20%;
+  left: 100%;
+}
