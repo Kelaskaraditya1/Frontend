@@ -13,11 +13,13 @@ html,body{
   height: 100%;
 }
 
-# means id, . means class and name of tag means targetting particular tag in the html page.
+'#' means id, '.' means class and name of tag means targetting particular tag in the html page.
 
 attributes:
 1) width and height: should be in %
 2) use x px for giving accurate/absolute value of the attribute.
+   to define a minimum width of an element: min-width
+
 3) margin patterns:
   1) margin: xpx gives margin in all diirection
   2) margin-top, margin-right, margin-bottom, margin-left indivisual magin
@@ -69,6 +71,17 @@ for manipulating height wise: align-items
 and both are to be put in the parent div
 
 values: start, end, center, space between, space around
+
+10) Font related css:
+  1) for changing font size: font-size: xpx 
+  2) for changing font weight: font-weight: xpx
+  3) for moving a text: text-align: left, center, right
+
+
+
+  BootStrap:
+  1) install Bootstrap dependency 
+
   
   */
 
