@@ -1,0 +1,42 @@
+.body{
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.calculator {
+  border: 1px solid black;
+  height: 600px;
+  width: 500px;
+  border-radius: 15px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 20px;
+  
+}
+
+.Button{
+  min-width: 80px;
+  margin: 5px;
+}
+
+.title {
+  font-size: 60px;
+  margin: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.display {
+  width: 250px;
+  height: 50px;
+}

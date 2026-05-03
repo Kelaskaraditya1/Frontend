@@ -81,6 +81,9 @@ values: start, end, center, space between, space around
 
   BootStrap:
   1) install Bootstrap dependency 
+  2) delete all .css files and remove the imports
+  3) import 'bootstrap/dist/css/bootstrap.min.css'
+
 
   
   */

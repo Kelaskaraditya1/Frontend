@@ -1,0 +1,66 @@
+for creating a React project:
+1) npm create vite@latest <project name>
+2) npm install
+3) npm run dev
+
+1) BootStrap:
+
+  1) install Bootstrap dependency 
+  2) delete all .css files and remove the imports
+  3) import 'bootstrap/dist/css/bootstrap.min.css' in main.jsx
+
+2) Fragment:
+   instead of wrapping the component in div tag we can use fragment tag
+   return <>
+    ...
+    </>
+
+    it is represented as <> .. </>
+
+3) while rendering a list use the map method and use the key attribute which uniquely identifies each item:
+
+  let list = []
+
+  return <>
+  <ul className="list-group">
+  <li className="list-group-item active" aria-current="true">Header</li>
+  {
+    healthy.map(
+      item=> <li key={item.id} className="list-group-item">{item}</li>
+    )
+  }
+
+4) Properties/Props: it is a way of passing data from parent component to child component.
+  it is a key value pair of passing data.
+
+  1) Taking props as a input parameter.
+
+  funciton Child(props){  // take props as a input parameter
+    return <>
+      {console.log(props.attribute)}
+      </>
+  } 
+
+  function Parent(){
+    <Child attribute={data}/>
+
+  }
+
+  here the key which is used while calling the Child component is very important, because we have to use the same key while fetching the data in child component: props.attribute. 
+
+  2) using Object Destructuring:
+
+  The Parent component remains same, changes are to be made in the child component.
+
+    funciton Child({attribute}){  // destructure the props object and take attribute out of it.
+    return <>
+      {console.log(attribute)}
+      </>
+  }
+
+5) Modular css: it is used when we have a single .css file and there are multiple styles with the same name.
+So what to do in this situation: 
+1) Create seprate css files for each component and follow the compulsory naming convention: Component.modular.css;
+2) import in the .jsx file where it will be used, for eg: import style from './..Component.modular.css'
+3) use it in the component where it is required: `{style['style-name']}`
+
