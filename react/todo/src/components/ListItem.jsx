@@ -1,8 +1,21 @@
-import listItemStyle from './ListItem.module.css'
+import './style.css'
 
+let ListItem = ({foodItem, onClick})=>{
 
-let ListItem = ({foodItem})=>{
-  return <li key={foodItem} className="list-group-item text-style">{foodItem}</li>
+  // let onClick = ()=>{
+  //   console.log(`${foodItem} is being ordered`)
+  // }
+
+  return <>
+  <div className='row'>
+      <li key={foodItem} className="list-group-item text-style">{foodItem} 
+  </li>
+  <li><button type="button" className={`${'btn btn-danger'} delete-button`} onClick={onClick}>Delete</button>
+  </li>
+  
+  </div>
+
+  </>
 }
 
 export default ListItem

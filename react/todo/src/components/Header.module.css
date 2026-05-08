@@ -5,3 +5,24 @@
   text-align: center;
 
 }
+
+.input-text{
+  width: 100%;
+  margin: 10px 0px;
+  font-size: 20px;
+
+}
+
+.display{
+  margin: 5px;
+  font-size: 20px;
+}
+
+
+.addButtonContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+
+}

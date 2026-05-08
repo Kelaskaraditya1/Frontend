@@ -58,9 +58,78 @@ for creating a React project:
       </>
   }
 
-5) Modular css: it is used when we have a single .css file and there are multiple styles with the same name.
+5)  Modular css: it is used when we have a single .css file and there are multiple styles with the same name.
 So what to do in this situation: 
 1) Create seprate css files for each component and follow the compulsory naming convention: Component.modular.css;
 2) import in the .jsx file where it will be used, for eg: import style from './..Component.modular.css'
 3) use it in the component where it is required: `{style['style-name']}`
 
+6) onClick event:
+
+every jsx element has a attribute onClick which requires a arrow function.
+
+let function = ()=>{
+  ...implementation
+}
+
+<div onClick=function>
+<div/>
+
+OnChange event: it is used when the user is entering the input and we have to show it changing dynamically.
+
+let function = (event)=>{
+  console.log(event.target.value) // shows the current value.
+}
+
+call it normally, no need to pass the event parameter.
+
+we can also pass fucntions to child component via props, this is mainly used so that the child component will only show the data and use the functionality/behaviour given by the parent.
+
+7) State Management:
+
+meaning: the component rerenders when there is a change in the data.
+it is done using a Hook. which is a js function which is used in a functional component.
+
+1) useState:
+
+let [getValue,setValue] = useState("initial value")
+
+for getting the current value: getValue
+for entering the new data: setValue(value)
+
+8) Context-Api: context api is a centralised place where the states/data will be saved and we donot need to pass prompt to avoid prop drilling.
+which ever component requires the data it can get it from Context api.
+The main reason is avoid passing of props because it might be un necessary.
+
+steps: 
+
+1) create a file for context:
+
+import { createContext } from "react";
+
+export const TodoContext = createContext();
+
+  2) than in a parent component which might contain all data and pass to the child component.
+
+    Parent Component
+
+    Data processing.
+
+    <ParentComponent.Provider value={
+      {  // data to be passed to child components
+      key:{value},
+      key:{value},
+      key:{value}
+      }
+    }>
+
+    <>
+    Screen components
+    </>
+
+    </ParentComponent.Provider>
+
+  3)Child Component:
+
+  let storeObject = useContext(TodoContext) get the Context object.
+  storeObject.key;

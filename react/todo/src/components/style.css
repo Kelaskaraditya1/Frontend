@@ -24,9 +24,24 @@ html,body{
 }
 
 .text-style{
-  background-color: khaki;
+  background-color: white;
   color: orange;
   font-weight: 500;
   text-align: start;
 
+}
+
+.delete-button{
+  float: right;
+  width: 50%;
+
+}
+
+.row{
+  display: flex;
+  justify-content: end;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 2px;
 }

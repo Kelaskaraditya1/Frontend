@@ -1,5 +1,5 @@
-let Button = ({buttonName})=>{
-  return <button type="button " class={`${'btn btn-secondary'} Button`}>{buttonName}</button>
+let Button = ({buttonName, onButtonClick})=>{
+  return <button type="button " className={`${'btn btn-secondary'} Button`} onClick={onButtonClick}>{buttonName}</button>
 }
 
 export default Button

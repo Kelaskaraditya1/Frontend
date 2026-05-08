@@ -77,6 +77,12 @@ values: start, end, center, space between, space around
   2) for changing font weight: font-weight: xpx
   3) for moving a text: text-align: left, center, right
 
+11) for moving component left right: float:left/right
+
+12) for arranging components in a column:
+
+display:flex;
+flex-direction:column
 
 
   BootStrap:
