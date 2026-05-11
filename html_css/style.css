@@ -17,14 +17,19 @@ html,body{
 
 attributes:
 1) width and height: should be in %
+
 2) use x px for giving accurate/absolute value of the attribute.
+  we can also use vh which basically works similar to %, the difference is that for % to work, the parent component should have height and width 
+  and it is known as viewport for for eg: 100vh ~ 100%
    to define a minimum width of an element: min-width
 
 3) margin patterns:
   1) margin: xpx gives margin in all diirection
   2) margin-top, margin-right, margin-bottom, margin-left indivisual magin
   3) margin: xpx ypx , 1 st value is applied to top-bottom and 2 nd value is applied to left and right side.
+
 4) Padding also follows the same pattern
+
 5) Image related:
   1) for getting image from internet, backgroung-image: url(url)
   2) for making the image fit to screen, background-size: cover
@@ -83,6 +88,12 @@ values: start, end, center, space between, space around
 
 display:flex;
 flex-direction:column
+
+13) for displaying the items in grid::after
+
+display:grid;
+grid-template-columns: repeat(4, 1fr)
+gap:10px
 
 
   BootStrap:

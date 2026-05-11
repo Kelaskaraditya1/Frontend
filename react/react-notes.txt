@@ -26,7 +26,7 @@ for creating a React project:
   <li className="list-group-item active" aria-current="true">Header</li>
   {
     healthy.map(
-      item=> <li key={item.id} className="list-group-item">{item}</li>
+      (item,index)=> <li key={index} className="list-group-item">{item}</li>
     )
   }
 
@@ -101,13 +101,15 @@ for entering the new data: setValue(value)
 which ever component requires the data it can get it from Context api.
 The main reason is avoid passing of props because it might be un necessary.
 
+it uses a special hook useContext.
+
 steps: 
 
 1) create a file for context:
 
 import { createContext } from "react";
 
-export const TodoContext = createContext();
+export const TodoContext = createContext(initial-value);
 
   2) than in a parent component which might contain all data and pass to the child component.
 
@@ -133,3 +135,103 @@ export const TodoContext = createContext();
 
   let storeObject = useContext(TodoContext) get the Context object.
   storeObject.key;
+
+9) Async Await & Promise: (Api Call)
+
+while using async and await it always returns Promises.
+and we have to use .then() to consume the Promise.
+
+while using async await:
+  1) use fetch("url") // this returns the Promise which contains many things statusCode, data etc.
+  it retunrs the data into Json object which has to be converted into Js object.
+
+  2) fetch(url)
+      .json() // this converts the json object to js object.
+
+  the data taht .json() gives is the actual result. which 
+
+  while using Promise:
+
+  1) use fetch("url") this returns Promise and to consume it use .then()
+
+  fetch("url")
+    .then(
+      (response) => response.json() // converts data to js object
+    )
+    .then(
+      (response) => console.log(response) //actual data
+    )
+
+    we just have to use Promise chaining.
+
+
+10) useEffect Hook:
+
+this hook is used when we want to execute the function on a specific condition, mostly state change.
+this hook excepts 2 parameters, 1 parameter is always a function to be executed and 2nd one is a variable parameter.
+
+useEffect(
+  ()=>{
+
+    return ()=>{
+      implementation of function...
+    };
+
+  },
+  parameter2
+)
+
+if we pass '[]' than the function will only be executed once , when first time the component is rendered.
+if passed nothing than every time the component is rendered it will be called.
+if we pass the state than whenever the state is changed than the fucntion is called.
+
+we can also write a return function at the end of the useEffect block which is basically called when the component is about to die.
+
+while making api call we have to use the below 
+
+let controller = new AbortController()
+let signal = controller.signal
+
+useEffect(
+  {
+
+    logic for api call
+
+    
+return ()=>{
+  controller.abort() // aborts the api call if made 
+}
+
+  },
+  parameter
+)
+
+
+
+11) Shortcut: when we have to render a ui component just on the basis of 1 condition
+
+12) making api call for other methods: when we donot pass any method , by default is is GET.
+
+fetch(
+  'url',{ // other required fields.
+
+  method:'POST/DELETE/PUT',
+  headers:{
+    'content-type':'application-json'
+  },
+  body:{ request body
+
+    }
+
+  }
+).then(
+  (response)=>response.json() 
+).then(
+  (response)=>consume the data.
+)
+
+
+
+{ condition && <Component/> }
+
+basically it is like A && B , when the condition is true than it returns B, and if the condition is false it returns false.
