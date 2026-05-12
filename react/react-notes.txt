@@ -230,8 +230,91 @@ fetch(
   (response)=>consume the data.
 )
 
-
-
 { condition && <Component/> }
 
 basically it is like A && B , when the condition is true than it returns B, and if the condition is false it returns false.
+
+
+13) Routing:
+
+1) install the dependency: npm install react-router-dom
+
+2) Do this steps in Main.jsx
+sometimes we get problem in auto complete so first import 
+
+import {createBrowserRouter, RouterProvider} from 'react-router-dom'
+
+const router = createBrowserRouter(   Basic Structure
+  [
+    {path:"/route",element:<Component/>}
+  ]
+)
+
+<RouterProvider router={router}>
+
+</RouterProvider>
+
+now if we direct put component in the element it will only render the component and not the entire screen so for that , 
+
+const router = createBrowserRouter(
+  [
+    {path:"/path",
+
+    element:<Parent/>,
+
+    child:{
+      path:"path1", element:<Parent/>,
+      path:"path2", element: <Child2/>,
+      path:"path3", element:<Child3/>
+    }
+    }
+  ]
+)
+
+and where we use the ternary operator for showing the Component we have to use <Outlet/>.
+
+this means that for eg: there is a fragment and we have to show different components on different routes keeping the Header and Footer intact so use this method.
+
+
+4) Loader & Action:
+
+loader: loader takes a function which runs before rendering the Component. and it is written in router.
+action: action is a function which is executed when a form is submit
+
+[
+  {
+    path:"/path",
+    element: <Component/>,
+    loader:{
+      ()=>{
+
+      }
+    },
+    action:{
+      ()=>{
+        
+      }
+    }
+  }
+]
+
+
+2) How to Navigate from one component to another without onClick{},
+
+so use <Link to="/path" >
+  <Component/>
+  </Link>
+
+in this there is no need of onClick.
+
+3) even better we can use navigate("/path")
+
+let navigate = useNavigate() // import this.
+
+onClick={
+  navigate("/path")
+}
+
+
+
+

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../Style.css'
 
 function Sidebar({selectedTab, setClickedTab}) {
@@ -25,13 +26,14 @@ function Sidebar({selectedTab, setClickedTab}) {
 
       <hr />
 
+
       <ul className="nav nav-pills flex-column mb-auto">
 
         <li className="nav-item" onClick={
           ()=>setClickedTab('Home')
         }>
-          <a
-            href="#"
+          <Link
+            to="/"
             className={`nav-link ${selectedTab==='Home' && 'active'} text-white`}
             aria-current="page"
           >
@@ -45,13 +47,13 @@ function Sidebar({selectedTab, setClickedTab}) {
             </svg>
 
             Home
-          </a>
+          </Link>
         </li>
 
         <li onClick={
           ()=>setClickedTab('Post')
         }>
-          <a href="#" className={`nav-link text-white ${selectedTab ==='Post' && 'active'}`}>
+          <a href="/create-post" className={`nav-link text-white ${selectedTab ==='Post' && 'active'}`}>
 
             <svg
               className="bi pe-none me-2"

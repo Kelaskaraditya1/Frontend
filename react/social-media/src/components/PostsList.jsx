@@ -21,9 +21,9 @@ let PostList = ()=>{
 
   let listComponent =   <center className="postList">
 
-  let spinner = <div className="spinner-border" role="status">
+  {/* let spinner = <div className="spinner-border" role="status">
   <span className="visually-hidden">Loading...</span>
-</div>
+</div> */}
 
   {
     posts.map(post=><PostItem post={post}></PostItem>)

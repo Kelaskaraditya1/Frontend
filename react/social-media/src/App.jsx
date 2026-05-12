@@ -8,10 +8,13 @@ import './Style.css'
 import PostList from "./components/PostsList";
 import POST_CONTEXT from "./store/PostsStore";
 import PostsContext from "./store/PostsStore";
+import { Outlet, useNavigate } from "react-router-dom";
 
 let App = () => {
 
   // States & Functions
+
+  
 
 const dummyPosts = [
     {
@@ -75,34 +78,34 @@ const dummyPosts = [
   }
 ];  
 
-useEffect(
-  ()=>{
+// useEffect(
+//   ()=>{
 
-    // Api call
+//     // Api call
 
-    let response = fetch(
-      'https://dummyjson.com/posts/add',
-      {
-        method:"POST",
-        headers:{
-          'Content-type':'application-json'
-        },
-        body:JSON.stringify(
-          {
-                title: 'I am Batman',
-                userId: 5,
-          }
-        )
-      }
-    ).then(
-      (rawResponse)=>rawResponse.json()
-    ).then(
-      console.log
-    )
+//     let response = fetch(
+//       'https://dummyjson.com/posts/add',
+//       {
+//         method:"POST",
+//         headers:{
+//           'Content-type':'application-json'
+//         },
+//         body:JSON.stringify(
+//           {
+//                 title: 'I am Batman',
+//                 userId: 5,
+//           }
+//         )
+//       }
+//     ).then(
+//       (rawResponse)=>rawResponse.json()
+//     ).then(
+//       console.log
+//     )
 
-  },
-  []
-)
+//   },
+//   []
+// )
 
 
 
@@ -128,6 +131,7 @@ useEffect(
   )
 
   let postId = useRef(1)
+  let navigation = useNavigate()
 
   let addPost = (title,content) =>{
 
@@ -144,6 +148,8 @@ useEffect(
         newPost,...getPosts
       ]
     )
+
+    navigation("/")
 
 
   }
@@ -178,9 +184,11 @@ useEffect(
 
           <div className="content">
 
-            {
+            {/* {
               getSelectedTab === 'Home' ? <PostList/> : <CreatePost/>
-            }
+            } */}
+
+            <Outlet/>
           </div>
 
           <Footer />
