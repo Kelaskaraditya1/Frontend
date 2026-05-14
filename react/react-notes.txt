@@ -1,3 +1,5 @@
+<---------------------------------------------------------------------------------------------REACT-------------------------------------------------------------------------------------------------->
+
 for creating a React project:
 1) npm create vite@latest <project name>
 2) npm install
@@ -292,7 +294,7 @@ action: action is a function which is executed when a form is submit
     },
     action:{
       ()=>{
-        
+
       }
     }
   }
@@ -316,5 +318,125 @@ onClick={
 }
 
 
+<---------------------------------------------------------------------------------------------REDUX-------------------------------------------------------------------------------------------------->
+
+There are 4 components in Redux 
+
+1) Store: This is the central store where the data is stored.
+2) Reducer: This is a abstract layer which takes the current value of the store and action(what operation to perform) and updates the current state and gives the new state.
+3) Subscriber: This is a function which listens to the change the value of state.
+4) Action: what action to be performed.
+
+for implementing in React:
+
+0) install redux and react-redux
+1) create a file store/index.js
+2) create store and reducer and export store.
+3) in main.jsx surround the App with Provider and pass the store object.
+
+import {Provider} from 'react-redux'
+
+<Provider store={storeObject}>
+<App/>
+</Provider>
+
+4) For putting value in the state, 
+
+let dispatch = useDispatch()
+
+onClick = {
+  ()=>{
+    dispatch({type: "EVENT"})
+  }
+}
+
+than in Reducer handle the event 
+
+5) For getting value from the state.
+
+let state = useSelector( gives the entire store object.
+  (store)=>store.attribute
+)
+
+In this there is no need for subscribing, it auto subscribes where we use the 
+
+Redux ToolKit:
+
+1) In redux toolkit we can create multiple reducers and combine them instead of having all the logic in the same reducer.
+2) We have to pass the action object , but in this we can directly call the action by exporting it.
+3) The most important point: In redux toolkit the states are mutable we mutate the same state instead of returning the new state.
+
+Steps:
+
+1) install the dependency: npm install @reduxjs/toolkit
+
+2) create a store/index.js file:
+
+  we have to create a single store which takes a object of multiple reducers:
+
+  let store = configureStore(
+    {
+      reducer:{
+        name1 : slice1.reducer,
+        name2 : slice2.reducer,
+      }
+    }
+  )
+
+  now create a Slice, using slices we can seprate the reducer logic.
+
+  let slice = craeteSlice(
+    {
+      name:"name of slice",
+
+      initialState:{
+        value or object
+      },
+
+      reducers:{
+
+        name1: (state,action)=>{
+
+        },
+
+        name2 : (state,action)=>{
+
+        },
+
+      }
+    }
+  ) 
 
 
+  export default store;
+
+  export const actions = slice.actions; // exporting actions.
+
+2) For using the actions
+
+    since we have exported the actions we can directly call them.
+
+    let dispatch = useDispatch()
+
+    dispatch(actions.method())
+
+ 
+3) For getting the values:
+
+    let {value} = useSelector(
+      (store)=>store.name
+    )
+
+    here store is the entire store and 'name' is the name of the slice and value is value which is decided in initialState.
+
+4) For passing payload , we can directly pass it in the actions functions parameter. we can pass both value as well as object.
+  and we donot need to define any parameter in the function definition yet still we can pass it.
+
+  action.method(value)
+
+  action.method(
+    {
+      key:value,
+      key:value
+    }
+  )
