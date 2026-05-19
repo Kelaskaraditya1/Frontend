@@ -1,0 +1,111 @@
+<------------------------------------------------------------------------------------------------->Tailwind Css:<------------------------------------------------------------------------------------->
+
+Tailwind is a Css realted framcework which writes css in background and we have to write include the predefined classes using class property.
+
+1) Steps for installing Tailwind Css for normal Html/Css:
+
+1) npm init -y
+2) npm install -D tailwindcss@3
+3) npx tailwindcss init
+
+4) create 2 dir src and dist (for build artificat)
+   create a file for input.css in dist/ and in that:
+
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+5) run the command: npx tailwind -i "path of input.css file" -o "path/name of output.css" --watch
+
+--watch continously monitors the change and writes appropriate .css in output.css
+
+<------------------------------------------------------------------------------------------------->Basic Classes<------------------------------------------------------------------------------------->
+
+we will write the initial's of the property later it will suggest the autocomplete which will have the different classes.
+
+1) Font related:
+
+1) font size: text- , eg:: text-sm, text-xl
+2) font weight: font-, eg: font-thin, font-light
+3) text-align: text-, eg: text-center, text-left
+
+2) Margin: 
+
+  1) for giving margin from all sides: m-value, eg: m-5
+
+  2) for giving margin from one side:
+
+    from top: mt-value, eg: mt-10
+    from bottom: mb-value, eg: mb-10
+    from right: mr-value, eg: mr-10
+    from left: ml-value, eg: ml-10
+
+  3) for giving horizontal margin: mx-value, eg: mx-10
+  
+  4) for giving vertical margin: my-value, eg: my-10
+
+
+3) Padding: follows the same pattern
+
+4) Background Image related:
+
+  1) setting background image with Url: bg-[url('/img.png')]
+  2) for setting position of background image: bg-<position>, eg: bg- 
+  3) for setting size of the background image: bg-, eg: bg-cover
+
+5) for giving position: absolute, relative
+
+directly use the specific words
+
+6) for using top, bottom, left, right position when used absolute and relative.
+
+  position-<value>, eg: left-10
+
+7) for using display, directly use the wording: flex, grid
+
+    1) for using justify-content: use the word justify and then the property: justify-<property> eg: justify-center, justify-start  
+    2) for using align-item: use the word items and then the property: items-center, items-star
+
+8) for arranging compnents in a column or row:
+
+flex-column, flex-row
+
+9) Border:
+
+    for giving border-radius: rounded-sm, rounded-md, rounded-lg
+    for giving width to border: border-<value>, eg: border-1, border-2
+    for giving color to border: border-<color>, eg: border-red, border-orange.
+    for  giving border style: border-<value>, eg: border-solid, border-dotted.  
+
+10) for arranging items in center horizontal and vertical:
+
+1) display:grid => grid;
+2) place-contentn: center => place-content-center
+
+) for arranging items in a grid:
+
+1) display:grid => grid;
+2) grid-template-column: repeat(4 1fr) => grid-cols-4
+3) gap: 10px => gap-10
+
+11) for forming a Card:
+
+1) margin: 40px auto => my-40 mx-auto  vertical margin from top and bottom 40px, horizontal margin 0px
+2) background-color: white => bg-white
+3) border-radius:10px => rounded-sm, rounder-md
+4) box-shadow : 0 4px 20px rgba(0,0,0,0.12) =>shadow-lg, shadow-xl
+5) overflow:hidden => overflow-hidden
+
+
+12) if we want to change some properties on hover or any other  action:
+we have to write the action:<change in property> everytime , and we have to use the same action
+
+13) Responsiveness:
+
+we can write responsive css for small screens and large screens as the size of the screen grows.
+
+sm: small screen, md: medium screen, lg: large screen.
+
+we can write multiple conditions that if the component is for sm screen than what should be the styling vs if it is for large screen than what shouldd be the styling.
+
+

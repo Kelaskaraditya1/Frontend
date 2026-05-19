@@ -96,6 +96,23 @@ grid-template-columns: repeat(4, 1fr)
 gap:10px
 
 
+14) for aligning content in center horizpntally and vertically:
+
+display:grid;
+place-content:center;
+
+15) card-template:
+
+.card {
+  margin: 40px auto;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  border: 1px solid #e5e5e5;
+} 
+
+
   BootStrap:
   1) install Bootstrap dependency 
   2) delete all .css files and remove the imports
@@ -114,6 +131,8 @@ gap:10px
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+
 }
 
 /* #image{
